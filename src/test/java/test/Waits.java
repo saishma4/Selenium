@@ -28,12 +28,12 @@ public class Waits {
 		driver.get("https://google.com");
 		driver.findElement(By.name("q")).sendKeys("selenium"+Keys.ENTER);
 		
-//		//explicit wait
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-//		WebElement myLink = wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Selenium")));
-//		myLink.click();
+		//explicit wait
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebElement myLink = wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Selenium")));
+		myLink.click();
 		
-		//
+		//fluent wait
 		Wait <WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
           .withTimeout(Duration.ofSeconds(10)) 
           .pollingEvery(Duration.ofSeconds(1)) 
